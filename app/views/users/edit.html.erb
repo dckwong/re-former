@@ -1,0 +1,7 @@
+<h1>Update your user!</h1>
+<%= form_for @user, method: :patch do |u| %>
+	Username: <%= u.text_field :username%> <br>
+	Email:    <%= u.text_field :email %> <br>
+	Password: <%= u.password_field :password %> <br>
+	<%= u.submit %>
+<% end %>
