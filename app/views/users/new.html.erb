@@ -29,6 +29,15 @@
 	</div>
 <% end %> -->
 
+<% if @user.errors.any? %>
+	<p>There were a few errors with your submission: </p>
+	<ul>
+	<% @user.errors.full_messages.each do |msg| %>
+	<li> <%= msg %> </li>
+	<% end %>
+	</ul>
+<% end %>
+
 <h1>Create a new user!</h1>
 <%= form_for @user do |u| %>
 	<%= u.label :username, "Username: " %>
@@ -39,6 +48,9 @@
 	<%= u.password_field :password %> <br/>
 	<%= u.submit %>
 <% end %>
+
+
+
 
 
 
